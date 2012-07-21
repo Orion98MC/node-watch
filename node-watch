@@ -5,8 +5,8 @@
   node-watch
   Watch the files <filename> and run scriptname.js in node.js every time any file or the script has changed
 
-	Usage:
-		node_watch [<filename> [<filename> ...]] <scriptname.js>
+  Usage:
+    node_watch [<filename> [<filename> ...]] <scriptname.js>
 
 
 
@@ -34,7 +34,7 @@
 */
 
 var 
-	fs = require('fs')
+  fs = require('fs')
 , spawn = require('child_process').spawn
 ;
 

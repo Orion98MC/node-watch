@@ -9,15 +9,15 @@ While developping in node.js (http://nodejs.org) I often need to re-run a script
 
 ## Requirements: OSX ONLY! :(
 
-The node-watch script is using a little binary executable (source included in src/) that makes use of kqueue in OSX to register for file descriptors changes which is a lot better than polling the filesystem every 500 ms or whatever.
+The node-watch script is using a little binary executable (source included in src/) that makes use of kqueue/kevent in OSX to register for file descriptors changes which is a lot better than polling the filesystem every 500 ms or whatever.
 Since my development plateform is a mac laptop and because I didn't have the time (yet) to investigate on how to do the very same on GNU/Linux and other OSes it will only work on OSX.
 
 ## Installation
 
 Make a link in one of you binary search PATH directory to the node-watch script
 
-	  $ cd ~/bin
-	  $ ln -s path-to-node-watch/node-watch
+    $ cd ~/bin
+    $ ln -s path-to-node-watch/node-watch
 
 ## Usage
 
@@ -29,12 +29,12 @@ Remark: the *script-to-run.js* is implicitly watched
 Now, open a new Terminal and change the directory to your current development path
 
     $ cd my-dev
-	  $ ls
-	  my-class.js my-tests.js README.md foo.js
+    $ ls
+    my-class.js my-tests.js README.md foo.js
 
 Start the node-watch for two of the files I am currently working on
 
-	  $ node-watch my-class.js my-test.js
+    $ node-watch my-class.js my-test.js
 
 Then for example, edit my-test.js or my-class.js in you favorite editor. (The best result is obtained when you can see the terminal while editing the files in you editor).
 
@@ -46,7 +46,7 @@ As an extra benefit, you can re-use the watchfiles binary for many other things,
 
     Usage: watchfiles <file-path> [<file-path> ...]
 
-*watchfiles* watches for changes for a list of files or folders and exits when a change occurs. It is very efficient and uses 0% CPU :) because of the kqueue usage.
+*watchfiles* watches for changes for a list of files or folders and exits when a change occurs. It is very efficient and uses 0% CPU :) thanks to kevents.
 
 ## Other
 
