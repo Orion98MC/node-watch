@@ -4,13 +4,14 @@ While developping in node.js (http://nodejs.org) I often need to re-run a script
 
 *node-watch* watches a list of files or folders and runs a particular script in node when any of the files or script have changed.
 
-
 # Install
 
 ## Requirements: OSX ONLY! :(
 
 The node-watch script is using a little binary executable (source included in src/) that makes use of kqueue/kevent in OSX to register for file descriptors changes which is a lot better than polling the filesystem every 500 ms or whatever.
 Since my development plateform is a mac laptop and because I didn't have the time (yet) to investigate on how to do the very same on GNU/Linux and other OSes it will only work on OSX.
+
+I must confess that doing this little tool was a good oportunity to get my hands in kqueue, in a future release I may try to integrate fs.watchFile() as an alternative to make it compatible with other OSes.
 
 ## Installation
 
